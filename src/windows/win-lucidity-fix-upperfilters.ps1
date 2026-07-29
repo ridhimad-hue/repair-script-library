@@ -22,7 +22,7 @@ $upperFilters = (Get-ItemProperty -Path $diskClassKey -Name "UpperFilters" -Erro
 if ($upperFilters) {
     Log-Output "UpperFilters FOUND: $upperFilters"
     if ($upperFilters -notcontains "partmgr") {
-        Log-Info "partmgr missing from UpperFilters — fixing..."
+        Log-Info "partmgr missing from UpperFilters - fixing..."
         $newFilters = @("partmgr") + $upperFilters
         Set-ItemProperty -Path $diskClassKey -Name "UpperFilters" -Value $newFilters
         Log-Output "UpperFilters FIXED: added partmgr"
@@ -30,7 +30,7 @@ if ($upperFilters) {
         Log-Output "UpperFilters OK: partmgr is present"
     }
 } else {
-    Log-Info "UpperFilters not found — creating with partmgr..."
+    Log-Info "UpperFilters not found - creating with partmgr..."
     New-ItemProperty -Path $diskClassKey -Name "UpperFilters" -Value @("partmgr") -PropertyType MultiString -Force
     Log-Output "UpperFilters CREATED with partmgr"
 }
@@ -64,7 +64,7 @@ foreach ($driver in $drivers.Keys) {
     if ($currentStart -eq $null) {
         Log-Error "$driver Start value NOT FOUND"
     } elseif ($currentStart -eq 4) {
-        Log-Info "$driver Start=4 (disabled) — fixing to $expectedStart..."
+        Log-Info "$driver Start=4 (disabled) - fixing to $expectedStart..."
         Set-ItemProperty -Path $driverKey -Name "Start" -Value $expectedStart
         Log-Output "$driver Start FIXED: $expectedStart"
     } else {
@@ -80,7 +80,7 @@ $bootExecute = (Get-ItemProperty -Path $sessionManagerKey -Name "BootExecute" -E
 Log-Output "BootExecute: $bootExecute"
 
 if ($bootExecute -notcontains "autocheck autochk *") {
-    Log-Info "autocheck autochk * missing from BootExecute — fixing..."
+    Log-Info "autocheck autochk * missing from BootExecute - fixing..."
     $newBootExecute = @("autocheck autochk *") + $bootExecute
     Set-ItemProperty -Path $sessionManagerKey -Name "BootExecute" -Value $newBootExecute
     Log-Output "BootExecute FIXED"
