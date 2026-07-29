@@ -135,8 +135,8 @@
 		"description": "Workaround for cvm machines stuck in boot loop due to corrupt crowdstrike falcon sensor 2024-07-19 by removing corrupt crowdstrike files"
 	},
 	{
-    "id": "win-lucidity-check-upperfilters",
-    "path": "src/windows/win-lucidity-check-upperfilters.ps1",
+    "id": "win-lucidity-fix-upperfilters.ps1",
+    "path": "src/windows/win-lucidity-fix-upperfilters.ps1",
     "description": "Checks UpperFilters registry for partmgr on broken Lucidity OS disk"
 	}	
 ]
