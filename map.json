@@ -133,5 +133,10 @@
 		"id": "win-crowdstrike-fix-bootloop-cvm",
 		"path": "src/windows/win-crowdstrike-fix-bootloop-cvm.ps1",
 		"description": "Workaround for cvm machines stuck in boot loop due to corrupt crowdstrike falcon sensor 2024-07-19 by removing corrupt crowdstrike files"
-	}
+	},
+	{
+    "id": "win-lucidity-check-upperfilters",
+    "path": "src/windows/win-lucidity-check-upperfilters.ps1",
+    "description": "Checks UpperFilters registry for partmgr on broken Lucidity OS disk"
+	}	
 ]
