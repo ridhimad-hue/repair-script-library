@@ -143,5 +143,10 @@
     "id": "win-lucidity-disk-signatures",
     "path": "src/windows/win-lucidity-disk-signatures.ps1",
     "description": "Fetches disk signatures and metadata for all disks on Lucidity-managed VMs"
-	}	
+	},
+	{
+    "id": "win-lucidity-disk-ids-fix",
+    "path": "src/windows/win-lucidity-disk-ids-fix.ps1",
+    "description": "Analyzes and fixes disk signature mismatches between the boot disk and the Lucidity storage pool disk"
+	}
 ]
